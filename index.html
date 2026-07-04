@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PVPUtils landing page with fixed navigation and rotating hero copy."
+    />
+    <meta name="theme-color" content="#050505" />
+    <title>PVPUtils</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <div class="video-background" aria-hidden="true">
+      <video class="bg-video" autoplay muted loop playsinline>
+        <source src="./resource/1.mp4" type="video/x-matroska" />
+      </video>
+      <div class="video-fallback"></div>
+    </div>
+
+    <div class="video-overlay" aria-hidden="true"></div>
+
+    <header class="topbar" aria-label="站点导航">
+      <a class="brand" href="./" aria-label="PVPUtils 首页">PVPUtils</a>
+
+      <nav class="topbar-links">
+        <button
+          class="topbar-link language-toggle"
+          id="language-toggle"
+          type="button"
+          aria-label="Switch to Chinese"
+        >
+          <span class="material-symbol link-icon">&#xe8e2;</span>
+          <span data-i18n="nav.language">中文</span>
+        </button>
+
+        <a
+          class="topbar-link"
+          href="https://github.com/bakabaicai/PVPUtils"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="link-icon">
+            <path
+              d="M12 2a10 10 0 0 0-3.16 19.5c.5.1.68-.22.68-.48v-1.7c-2.78.61-3.37-1.18-3.37-1.18-.45-1.14-1.1-1.45-1.1-1.45-.9-.61.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.88 1.52 2.31 1.08 2.87.82.09-.63.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.97 1.03-2.66-.1-.25-.45-1.26.1-2.62 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.9-1.29 2.75-1.02 2.75-1.02.55 1.36.2 2.37.1 2.62.64.69 1.03 1.57 1.03 2.66 0 3.84-2.34 4.69-4.57 4.94.36.31.69.92.69 1.86v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"
+            />
+          </svg>
+          <span>Github</span>
+        </a>
+
+        <a
+          class="topbar-link"
+          href="https://www.curseforge.com/minecraft/mc-mods/pvputils"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="link-icon">
+            <path
+              d="M6 20h12v2H6v-2Zm6-18 8 7-8 3-8-3 8-7Zm0 3.2L9.5 8l2.5.9 2.5-.9L12 5.2ZM8 12l4 1.5 4-1.5v5.2L12 19l-4-1.8V12Z"
+            />
+          </svg>
+          <span>Curseforge</span>
+        </a>
+
+        <a
+          class="topbar-link"
+          href="https://modrinth.com/mod/pvp_utils"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="link-icon">
+            <path
+              d="M12 2 3.5 6.5V17.5L12 22l8.5-4.5V6.5L12 2Zm0 2.3 6.5 3.4-6.5 3.4-6.5-3.4L12 4.3Zm-7 5.1 6 3.1v6.6l-6-3.2V9.4Zm14 0v6.5l-6 3.2v-6.6l6-3.1Z"
+            />
+          </svg>
+          <span>Modrinth</span>
+        </a>
+
+        <a class="topbar-link topbar-link-qq" href="#" aria-label="QQ group beta downloads">
+          <span class="material-symbol link-icon">&#xe0ca;</span>
+          <span data-i18n="nav.qq">QQ群聊（下载测试版）</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="page-content">
+      <section class="hero snap-section is-active" aria-label="首页主视觉">
+        <div class="section-inner hero-inner">
+          <h1 class="headline">
+            <span class="headline-row">
+              <span class="headline-static" data-i18n="hero.prefix">你所需要的</span>
+              <span class="headline-rotator" aria-live="polite">
+                <span class="rotating-word">流畅</span>
+              </span>
+            </span>
+            <span class="headline-row headline-row-end">
+              <span class="headline-static" data-i18n="hero.suffix">，尽在PVPUtils。</span>
+            </span>
+          </h1>
+        </div>
+      </section>
+
+      <section class="feature-section snap-section" aria-label="功能展示">
+        <div class="section-inner feature-layout">
+          <div class="feature-copy">
+            <h2 class="feature-title" data-i18n="origin.title">初衷</h2>
+            <p class="feature-text" data-i18n="origin.text1">
+              PVPUtils 的出现，是为了弥补高版本 Minecraft 缺乏专门针对 PVP 体验进行优化的模组这一空白。现有的同类模组或客户端往往不够开放，无法根据用户需求自由定制；而功能相关的模组虽然不少，但大多功能单一且彼此间缺乏兼容性。
+            </p>
+            <p class="feature-text" data-i18n="origin.text2">
+              PVPUtils 改变了这一现状。它是一个完全开源的客户端模组，您可以在遵守开源协议的前提下自由修改和改进。它整合了大部分 PVP 与生存中常见的辅助与优化功能，让您只需安装一款模组，即可获得多款模组带来的完整体验。同时，作为客户端模组，您也可以自由搭配其他模组来定制属于自己的游戏体验，PVPUtils 也在持续适配和兼容大多数主流模组。
+            </p>
+          </div>
+
+          <div class="feature-media">
+            <img
+              class="feature-image"
+              src="./resource/clickgui-en.gif"
+              alt="PVPUtils visual preview"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-section snap-section" aria-label="功能展示详情">
+        <div class="section-inner feature-showcase">
+          <div class="feature-header">
+            <h2 class="feature-heading" data-i18n="features.title">来看看PVPUtils都对这个游戏做出了什么改变吧</h2>
+            <p class="feature-subheading" data-i18n="features.subtitle">
+              PVPUtils经过了长达1年的打磨，经历过多次重构和改名，最终以最完美、最流畅的姿态呈现在您眼前。
+            </p>
+          </div>
+
+          <div class="feature-panel">
+            <div class="feature-copy">
+              <h3 class="feature-title">HUDEdit</h3>
+              <p class="feature-text" data-i18n="features.hudedit">
+                PVPUtils提供了一个十分先进且方便的HUD编辑器，您可以打开聊天框或是在Clickgui内点击打开，并使用鼠标拖动或是使用鼠标滚轮来缩放HUD组件。
+              </p>
+            </div>
+
+            <div class="feature-media">
+              <video class="feature-video" autoplay muted loop playsinline>
+                <source src="./resource/2.mkv" type="video/x-matroska" />
+              </video>
+            </div>
+          </div>
+
+          <div class="feature-panel feature-panel-reverse feature-panel-alt">
+            <div class="feature-media">
+              <video class="feature-video" autoplay muted loop playsinline>
+                <source src="./resource/3.mkv" type="video/x-matroska" />
+              </video>
+            </div>
+
+            <div class="feature-copy">
+              <h3 class="feature-title">CustomMainUI</h3>
+              <p class="feature-text" data-i18n="features.customMainUi1">
+                PVPUtils实现了一套非常优美的GLSL主界面，点击原版主界面旁边的”P“即可打开，左键单击左上角标题即可返回原版，右键则可以在多达27中GLSL渲染器中选择一个合你口味的背景，部分背景支持鼠标交互。
+              </p>
+              <p class="feature-text" data-i18n="features.customMainUi2">
+                同时，点击右上角设置还可以切换为自定义背景图，同时也支持鼠标交互效果。
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-panel feature-panel-sky">
+            <div class="feature-copy">
+              <h3 class="feature-title">DynamicIsland</h3>
+              <p class="feature-text" data-i18n="features.dynamicIsland">
+                PVPUtils为游戏添加了灵动岛视觉组件，玩家可以在开启灵动岛时，长按“TAB”键在灵动岛上展开玩家列表，同时，也可以使用指令来修改灵动岛左侧的客户端名称，未来会围绕灵动岛添加更多功能。
+              </p>
+            </div>
+
+            <div class="feature-media">
+              <video class="feature-video" autoplay muted loop playsinline>
+                <source src="./resource/4.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          <div class="feature-more-bar">
+            <p class="feature-more-text" data-i18n="features.moreText">
+              更多功能可点击右侧按钮详细了解。
+            </p>
+            <a
+              class="feature-more-button"
+              href="https://github.com/bakabaicai/PVPUtils/wiki/All-modules"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="material-symbol feature-more-icon">&#xe89e;</span>
+              <span data-i18n="features.moreButton">点击这里</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-section snap-section" aria-label="我们的优势">
+        <div class="section-inner advantage-showcase">
+          <div class="feature-header">
+            <h2 class="feature-heading" data-i18n="advantages.title">我们的优势</h2>
+          </div>
+
+          <div class="feature-mini-grid" aria-label="优势列表">
+            <article class="feature-mini-card">
+              <div class="feature-mini-title">
+                <span class="material-symbol feature-mini-icon">&#xe3c9;</span>
+                <h3 data-i18n="advantages.configurable.title">可配置</h3>
+              </div>
+              <p class="feature-mini-text" data-i18n="advantages.configurable.text">
+                PVPUtils几乎所有模块都可以通过Clickgui的滑块和选项进行深度配置，无论您的水平如何都能快速上手。
+              </p>
+            </article>
+
+            <article class="feature-mini-card">
+              <div class="feature-mini-title">
+                <span class="material-symbol feature-mini-icon">&#xe894;</span>
+                <h3 data-i18n="advantages.language.title">多语言</h3>
+              </div>
+              <p class="feature-mini-text" data-i18n="advantages.language.text">
+                看不懂英语/中文？没关系，PVPUtils提供了语言切换选项，您可以在Clickgui自由选择英语或中文，切换后重新开关Clickgui即可生效。
+              </p>
+            </article>
+
+            <article class="feature-mini-card">
+              <div class="feature-mini-title">
+                <span class="material-symbol feature-mini-icon">&#xe4f4;</span>
+                <h3 data-i18n="advantages.free.title">免费使用</h3>
+              </div>
+              <p class="feature-mini-text" data-i18n="advantages.free.text">
+                PVPUtils自诞生之初就从未向用户收过一分钱，完全由开发者团队用爱发电，截至目前，收到的赞助金额也未超过100元。
+              </p>
+            </article>
+
+            <article class="feature-mini-card">
+              <div class="feature-mini-title">
+                <span class="material-symbol feature-mini-icon">&#xe923;</span>
+                <h3 data-i18n="advantages.fastUpdates.title">高更新速度</h3>
+              </div>
+              <p class="feature-mini-text" data-i18n="advantages.fastUpdates.text">
+                我们的开发者团队对于测试版的更新速度极快，曾今创下过一天更新三个测试版的历史。
+              </p>
+            </article>
+
+            <article class="feature-mini-card">
+              <div class="feature-mini-title">
+                <span class="material-symbol feature-mini-icon">&#xe813;</span>
+                <h3 data-i18n="advantages.feedback.title">听取建议</h3>
+              </div>
+              <p class="feature-mini-text" data-i18n="advantages.feedback.text">
+                我们的开发者十分愿意听取用户名的建议，PVPUtils超过三分之一的功能都是由用户提出，再经由开发者添加至客户端内的。
+              </p>
+            </article>
+
+            <article class="feature-mini-card">
+              <div class="feature-mini-title">
+                <span class="material-symbol feature-mini-icon">&#xe898;</span>
+                <h3 data-i18n="advantages.ecosystem.title">开放包容的生态</h3>
+              </div>
+              <p class="feature-mini-text" data-i18n="advantages.ecosystem.text">
+                得益于PVPUtils的开源性质，社区成员已经做出了许多优异的作品，他们有的被吸纳进PVPUtils本体，有的则是作为独立分支进行发展，PVPUtils对此非常包容和支持。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-section snap-section" aria-label="视频展示">
+        <div class="section-inner video-showcase">
+          <div class="feature-header">
+            <h2 class="feature-heading" data-i18n="videos.title">想看看吗</h2>
+            <p class="feature-subheading" data-i18n="videos.subtitle">
+              以下是PVPUtils开发者团队录制的视频
+            </p>
+          </div>
+
+          <div class="video-grid">
+            <div class="bilibili-frame">
+              <iframe
+                class="bilibili-window"
+                src="https://player.bilibili.com/player.html?bvid=BV1eaT46SEEG&autoplay=0"
+                title="PVPUtils video BV1eaT46SEEG"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="bilibili-frame">
+              <iframe
+                class="bilibili-window"
+                src="https://player.bilibili.com/player.html?bvid=BV1s1Jc6FEps&autoplay=0"
+                title="PVPUtils video BV1s1Jc6FEps"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="bilibili-frame">
+              <iframe
+                class="bilibili-window"
+                src="https://player.bilibili.com/player.html?bvid=BV13Zj66CEm9&autoplay=0"
+                title="PVPUtils video BV13Zj66CEm9"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="bilibili-frame">
+              <iframe
+                class="bilibili-window"
+                src="https://player.bilibili.com/player.html?bvid=BV1hCjn6HEJ2&autoplay=0"
+                title="PVPUtils video BV1hCjn6HEJ2"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-section snap-section" aria-label="统计数据">
+        <div class="section-inner stats-showcase">
+          <div class="feature-header">
+            <h2 class="feature-heading" data-i18n="stats.title">统计数据</h2>
+            <p class="feature-subheading" data-i18n="stats.subtitle">自公开以来所有的统计数据</p>
+          </div>
+
+          <div class="stats-panel">
+            <div class="stat-item">
+              <h3 class="stat-label stat-label-download" data-i18n="stats.downloads">下载量</h3>
+              <p class="stat-value" id="download-count" data-loading-key="stats.loading">加载中</p>
+            </div>
+
+            <div class="stat-item">
+              <h3 class="stat-label stat-label-online" data-i18n="stats.online">在线人数</h3>
+              <p class="stat-value" id="online-count" data-loading-key="stats.loading">加载中</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-section snap-section" aria-label="用户评价">
+        <div class="section-inner review-showcase">
+          <div class="feature-header">
+            <h2 class="feature-heading" data-i18n="reviews.title">用户评价</h2>
+            <p class="feature-subheading" data-i18n="reviews.subtitle">
+              里面收集了一些来自用户中肯的评价。
+            </p>
+          </div>
+
+          <button class="review-panel" id="review-panel" type="button">
+            <span class="review-text" id="review-text">
+              我从未用过这么好用的PVP客户端！ ————MagicMusician
+            </span>
+          </button>
+          <p class="review-hint" data-i18n="reviews.hint">点击评论可浏览更多内容</p>
+        </div>
+      </section>
+
+      <section class="feature-section snap-section" aria-label="开始使用">
+        <div class="section-inner ending-layout">
+          <div class="ending-copy">
+            <h2 class="feature-title" data-i18n="ending.title">准备好开始了吗？</h2>
+            <p class="feature-text" data-i18n="ending.text">
+              下载 PVPUtils，或者加入项目，一起让高版本 Minecraft PVP 体验变得更好！
+            </p>
+          </div>
+
+          <div class="ending-actions" aria-label="下载和项目链接">
+            <a
+              class="ending-pill ending-pill-modrinth"
+              href="https://modrinth.com/mod/pvp_utils"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Modrinth
+            </a>
+            <a
+              class="ending-pill ending-pill-curseforge"
+              href="https://www.curseforge.com/minecraft/mc-mods/pvputils"
+              target="_blank"
+              rel="noreferrer"
+            >
+              CurseForge
+            </a>
+            <a class="ending-pill ending-pill-qq" href="#">
+              <span data-i18n="ending.qq">QQ群聊（下载测试版）</span>
+            </a>
+            <a
+              class="ending-pill ending-pill-github"
+              href="https://github.com/bakabaicai/PVPUtils"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <p class="site-copyright">© 2025-2026 PVPUtils Team. All rights reserved.</p>
+  </body>
+</html>
