@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "reviews.title": "User Reviews",
       "reviews.subtitle": "A collection of honest comments from users.",
       "reviews.hint": "Click the review to browse more comments.",
+      "changelog.title": "Update Log",
       "ending.title": "Ready to Start?",
       "ending.text":
         "Download PVPUtils, or join the project, and help make modern Minecraft PVP better together!",
@@ -120,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "reviews.title": "用户评价",
       "reviews.subtitle": "里面收集了一些来自用户中肯的评价。",
       "reviews.hint": "点击评论可浏览更多内容",
+      "changelog.title": "更新日志",
       "ending.title": "准备好开始了吗？",
       "ending.text":
         "下载 PVPUtils，或者加入项目，一起让高版本 Minecraft PVP 体验变得更好！",
@@ -263,6 +265,333 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   };
 
+  const changelogEntries = [
+    {
+      version: "V1.5-beta.1",
+      type: "beta",
+      logs: {
+        zh: [
+          "修复了正式版自动更新版本号解析错误导致一直提示有更新的问题",
+          "修复灵动岛无法正常读取部分服务器名称前缀与颜色的bug",
+          "灵动岛接入HUDEdit，支持调节大小与位置",
+          "挖掘状态显示现在会提示你手中的工具是否可以挖掘掉这个方块",
+          "加入主手辅助（需要在完整模式下才能使用）",
+          "加入物品使用状态提示，可以实时追踪弓是否拉满、食物/物品还有多久才能使用完",
+          "加入缩放，默认快捷键C，可以在MC原版按键设置中更改按键",
+          "加入受击颜色更改，可以自由改变实体受击时的颜色",
+          "内置去除 “Reconfiguring...” 界面 Disconnect 按钮等待时间",
+          "修复自定义披风会给所有人装备上的bug",
+          "重构命令逻辑，加入help指令，优化命令反馈",
+          "优化伽马值修改的视觉效果，减少亮度突然增加带来的闪烁",
+        ],
+        en: [
+          "Fixed an issue where release auto-update version parsing was incorrect and kept reporting available updates.",
+          "Fixed Dynamic Island failing to correctly read some server name prefixes and colors.",
+          "Integrated Dynamic Island into HUDEdit, supporting size and position adjustment.",
+          "Digging status now tells you whether the tool in your hand can mine the targeted block.",
+          "Added Main Hand Assist. It requires full mode to use.",
+          "Added item usage status hints, allowing real-time tracking of bow charge and remaining food/item use time.",
+          "Added zoom. The default key is C and can be changed in vanilla Minecraft key settings.",
+          "Added hit color customization, allowing entity hit colors to be changed freely.",
+          "Built in removal of the wait time for the Disconnect button on the “Reconfiguring...” screen.",
+          "Fixed custom capes being equipped on everyone.",
+          "Refactored command logic, added the help command, and improved command feedback.",
+          "Optimized the visual effect of gamma changes, reducing flicker caused by sudden brightness increases.",
+        ],
+      },
+    },
+    {
+      version: "V1.4",
+      type: "release",
+      logs: {
+        zh: [
+          "新增灵动岛，长按TAB可用灵动岛展开玩家列表，使用/PVPUtlis clientname xxx可以改变显示的客户端名称",
+          "为TargetHUD与Blockcount添加Blur模式（模糊效果）",
+          "增加物品物理掉落",
+          "增加掉落物2D渲染",
+          "自定义披风从 渲染 迁移至 工具",
+          "优化性能",
+          "修复部分情况下会导致游戏内物品图标消失的bug",
+          "添加改变客户端时间和改变客户端天气",
+          "增加攻击目标效果，可以自定义攻击目标时的粒子效果",
+          "增加全局主题切换",
+          "增加/PVPUtlis help指令",
+        ],
+        en: [
+          "Added Dynamic Island. Hold TAB to expand the player list through Dynamic Island. Use /PVPUtlis clientname xxx to change the displayed client name.",
+          "Added Blur mode for TargetHUD and Blockcount.",
+          "Added physical item drops.",
+          "Added 2D rendering for dropped items.",
+          "Moved Custom Cape from Render to Tools.",
+          "Optimized performance.",
+          "Fixed a bug that could cause in-game item icons to disappear in some cases.",
+          "Added client-side time and weather changing.",
+          "Added attack target effects, allowing custom particles when attacking targets.",
+          "Added global theme switching.",
+          "Added the /PVPUtlis help command.",
+        ],
+      },
+    },
+    {
+      version: "V1.4-beta.1",
+      type: "beta",
+      logs: {
+        zh: ["修复输入法冲突，修复偶发BUG，创造物品栏搜索仍需要手动点击输入框"],
+        en: [
+          "Fixed input method conflicts and occasional bugs. Creative inventory search still requires manually clicking the input box.",
+        ],
+      },
+    },
+    {
+      version: "V1.3",
+      type: "release",
+      logs: {
+        zh: ["修复了v1.3-beta.6在部分设备下偶发崩溃的问题"],
+        en: ["Fixed occasional crashes from v1.3-beta.6 on some devices."],
+      },
+    },
+    {
+      version: "V1.3-beta.6",
+      type: "beta",
+      logs: {
+        zh: ["优化自动更新", "添加更好的聊天框"],
+        en: ["Optimized automatic updates.", "Added a better chat box."],
+      },
+    },
+    {
+      version: "V1.3-beta.5",
+      type: "beta",
+      logs: {
+        zh: [
+          "彻底重构底层渲染逻辑，将逻辑从 CPU Rasterization with Texture Caching 改进为 Direct GPU Hardware-Accelerated Rendering，大幅度优化性能，性能比较与之前提升3-4x",
+          "添加自动更新，也可以使用/PVPUtils update手动检测更新，该功能为实验性阶段，暂不稳定，需要稳定的网络环境（后续考虑加入镜像站）",
+          "修复防砍动画异常",
+          "修复部分崩溃问题",
+          "修复上一个alpha版本的各种兼容性bug",
+          "修复部分ui在特殊场景下会出现闪烁、形状与大小出现错误、文字反转的问题",
+          "修复GLSL渲染器偶发崩溃的问题",
+          "移除部分功能",
+          "添加盔甲显示",
+          "添加药水效果显示",
+          "内置MC-159163bug修复",
+          "修复语言不会自动根据当前用户使用语言改变的问题",
+          "完善使用条款",
+          "减少运行时内存占用",
+          "修复HUDEdit部分情况下三分线与元素边框不显示或偏移的问题",
+          "优化运动模糊算法",
+          "修复ClickGUI与Notification同时显示时ClickGUI显示不正常的问题",
+        ],
+        en: [
+          "Completely refactored the low-level rendering logic, moving from CPU Rasterization with Texture Caching to Direct GPU Hardware-Accelerated Rendering. Performance is greatly improved, reaching roughly 3-4x compared with the previous implementation.",
+          "Added automatic updates. You can also manually check updates with /PVPUtils update. This feature is experimental, currently unstable, and requires a stable network environment. Mirror sites may be added later.",
+          "Fixed abnormal anti-hit animation behavior.",
+          "Fixed several crash issues.",
+          "Fixed various compatibility bugs from the previous alpha version.",
+          "Fixed UI flickering, incorrect shape or size, and reversed text in some special scenarios.",
+          "Fixed occasional GLSL renderer crashes.",
+          "Removed some features.",
+          "Added armor display.",
+          "Added potion effect display.",
+          "Built in a fix for MC-159163.",
+          "Fixed language not automatically changing according to the user's current language.",
+          "Improved terms of use.",
+          "Reduced runtime memory usage.",
+          "Fixed HUDEdit guide lines and element borders not displaying or shifting in some cases.",
+          "Optimized motion blur algorithm.",
+          "Fixed ClickGUI rendering incorrectly when ClickGUI and Notification are displayed at the same time.",
+        ],
+      },
+    },
+    {
+      version: "V1.3-beta.4",
+      type: "beta",
+      logs: {
+        zh: [
+          "修复了一些已知问题",
+          "Keystrokes 添加了 New 样式",
+          "加入鞘翅改进和暴击辅助",
+          "增加五个背景GLSL",
+          "优化文件结构以减小约1/2包体大小",
+        ],
+        en: [
+          "Fixed several known issues.",
+          "Added the New style to Keystrokes.",
+          "Added Elytra improvements and Critical Assist.",
+          "Added five background GLSL effects.",
+          "Optimized the file structure, reducing package size by roughly half.",
+        ],
+      },
+    },
+    {
+      version: "V1.3-beta.3",
+      type: "beta",
+      logs: {
+        zh: ["增加自定义披风", "自定义主界面增加自定义图片功能", "修了一堆奇奇怪怪的bug"],
+        en: [
+          "Added custom capes.",
+          "Added custom image support to the custom main menu.",
+          "Fixed a bunch of strange bugs.",
+        ],
+      },
+    },
+    {
+      version: "V1.3-beta.2",
+      type: "beta",
+      logs: {
+        zh: [
+          "增加更美观的主菜单界面（在主菜单单击“P”来开启）",
+          "修复方块数量显示误触发问题",
+          "修复使用动画影响长矛的问题",
+          "修复部分已知崩溃与资源加载问题",
+        ],
+        en: [
+          "Added a more beautiful main menu interface. Click “P” on the main menu to open it.",
+          "Fixed false triggering in block count display.",
+          "Fixed use animation affecting tridents.",
+          "Fixed several known crashes and resource loading issues.",
+        ],
+      },
+    },
+    {
+      version: "V1.3-beta.1",
+      type: "beta",
+      logs: {
+        zh: [
+          "增加钓鱼竿辅助",
+          "增加TargetHUD新模式",
+          "增加BlockCount",
+          "增加去除攻击冷却动画",
+          "大幅优化性能",
+          "修复部分已知崩溃bug",
+        ],
+        en: [
+          "Added Fishing Rod Assist.",
+          "Added a new TargetHUD mode.",
+          "Added BlockCount.",
+          "Added attack cooldown animation removal.",
+          "Greatly optimized performance.",
+          "Fixed several known crash bugs.",
+        ],
+      },
+    },
+    {
+      version: "V1.3-alpha.2",
+      type: "alpha",
+      logs: {
+        zh: ["增加动态模糊"],
+        en: ["Added motion blur."],
+      },
+    },
+    {
+      version: "V1.3-alpha.1",
+      type: "alpha",
+      logs: {
+        zh: [
+          "该版本为Alpha版本，极不稳定，很多地方存在未知bug，请不要将其作为长期使用对象",
+          "超大幅优化性能",
+          "彻底重构底层渲染逻辑",
+          "将部分渲染全部转移至GPU",
+        ],
+        en: [
+          "This is an alpha version. It is extremely unstable and contains unknown bugs in many areas. Do not use it as a long-term version.",
+          "Massively optimized performance.",
+          "Completely refactored the low-level rendering logic.",
+          "Moved part of the rendering pipeline entirely to the GPU.",
+        ],
+      },
+    },
+    {
+      version: "V1.2",
+      type: "release",
+      logs: {
+        zh: [
+          "加入全新 ClickGUI（基于 Skija 自绘），替换原版按钮界面，带来现代化、流畅的交互体验",
+          "加入语言切换功能，支持中文/英文切换（需关闭并重新打开设置菜单生效）",
+          "战斗模块：受击反馈（HitMarker）命中目标时在准星附近显示视觉提示",
+          "战斗模块：受击音效（HitSound）命中目标时播放音效，支持自定义音效类型与触发条件",
+          "渲染模块：UI编辑器（UI Editor）打开HUD布局编辑器，自由拖拽调整所有HUD元素位置",
+          "渲染模块：剑格挡动画（Sword Blocking Animation）还原经典旧版剑格挡视觉效果",
+          "渲染模块：自动格挡（AutoBlock）目标进入合适距离时自动触发格挡动画",
+          "渲染模块：使用物品动画（Use Animation）使用或消耗物品时启用自定义动画",
+          "渲染模块：挖掘状态显示（Digging Status）准星下方显示当前挖掘进度与剩余时间，如 99% (1s)",
+          "渲染模块：潜行动画调整（Sneak Animation Adjustment）微调潜行时摄像机下降效果",
+          "渲染模块：伽马值覆盖（Gamma Override）自定义并突破亮度上限",
+          "渲染模块：渲染控制（Render Control）选择性隐藏告示牌文字、附魔台浮动书、第一人称火焰覆盖、受伤倾斜/摇晃效果",
+          "渲染模块：低血量警告（LowHealthWarning）血量过低时显示醒目提醒",
+          "渲染模块：目标信息显示（TargetHUD）实时显示当前目标的血量、距离等状态信息",
+          "渲染模块：按键显示（Keystrokes）显示WASD输入、鼠标按键及实时CPS",
+          "工具模块：胜利截图（VictoryScreenshot）获胜时自动截图并保存至桌面",
+          "工具模块：掉落伤害预测（FallDamagePredictor）预测掉落是否造成伤害，安全时自动隐藏",
+          "工具模块：自动疾跑（Auto Sprint）移动时自动触发疾跑",
+          "工具模块：快速存放（Quick Deposit）在容器中左键单击物品快速存入，可限制仅对起床战争资源生效",
+          "优化：修复游戏内 CJK（中日韩）输入法导致游戏卡死或无法响应的问题",
+          "杂项：胜利音效（VictorySound）获胜时播放自定义音效，并提供一键打开音效文件夹的快捷按钮",
+        ],
+        en: [
+          "Added a brand-new ClickGUI based on Skija custom rendering, replacing the vanilla button interface with a modern and smooth interaction experience.",
+          "Added language switching, supporting Chinese and English. The settings menu must be closed and reopened for changes to take effect.",
+          "Combat: HitMarker displays a visual indicator near the crosshair when hitting a target.",
+          "Combat: HitSound plays a sound when hitting a target, with customizable sound type and trigger conditions.",
+          "Render: UI Editor opens a HUD layout editor, allowing all HUD elements to be freely dragged and adjusted.",
+          "Render: Sword Blocking Animation restores the classic old sword blocking visual effect.",
+          "Render: AutoBlock automatically triggers the blocking animation when the target is within a suitable distance.",
+          "Render: Use Animation enables custom animations when using or consuming items.",
+          "Render: Digging Status displays current digging progress and remaining time under the crosshair, such as 99% (1s).",
+          "Render: Sneak Animation Adjustment fine-tunes camera lowering while sneaking.",
+          "Render: Gamma Override customizes and breaks through the brightness limit.",
+          "Render: Render Control selectively hides sign text, enchanting table floating book, first-person fire overlay, and hurt tilt/shake effects.",
+          "Render: LowHealthWarning displays a prominent warning when health is too low.",
+          "Render: TargetHUD displays current target health, distance, and other status information in real time.",
+          "Render: Keystrokes displays WASD input, mouse buttons, and real-time CPS.",
+          "Tools: VictoryScreenshot automatically takes and saves a screenshot to the desktop after winning.",
+          "Tools: FallDamagePredictor predicts whether a fall will cause damage and automatically hides when safe.",
+          "Tools: Auto Sprint automatically triggers sprinting while moving.",
+          "Tools: Quick Deposit lets left-clicking items in containers quickly deposit them, with an option to restrict it to BedWars resources.",
+          "Optimization: Fixed in-game CJK input methods causing the game to freeze or stop responding.",
+          "Misc: VictorySound plays a custom sound after winning and provides a shortcut button to open the sound folder.",
+        ],
+      },
+    },
+    {
+      version: "V1.1",
+      type: "release",
+      logs: {
+        zh: [
+          "项目底层代码完全重构，抛弃旧版冗余结构与不规范命名，大幅提升用户体验与后续开发维护效率",
+          "加入掉落伤害预测（FallDamagePredictor）",
+          "加入受击反馈（HitMarker）",
+          "加入目标信息显示（TargetHUD）",
+          "加入低血量警告（LowHealthWarning）",
+          "加入胜利截图（VictoryScreenshot）",
+          "加入胜利音效（VictorySound）",
+          "大部分功能支持通过设置菜单自定义",
+        ],
+        en: [
+          "Completely refactored the underlying project code, removing old redundant structure and non-standard naming to greatly improve user experience and future maintainability.",
+          "Added FallDamagePredictor.",
+          "Added HitMarker.",
+          "Added TargetHUD.",
+          "Added LowHealthWarning.",
+          "Added VictoryScreenshot.",
+          "Added VictorySound.",
+          "Most features now support customization through the settings menu.",
+        ],
+      },
+    },
+    {
+      version: "V1.0.0",
+      type: "release",
+      logs: {
+        zh: [
+          "PVPUtils第一个版本，诞生于2026年3月14日（第一次上传Github的时候，实际上第一个版本的日期在2025年6月19日）",
+        ],
+        en: [
+          "The first version of PVPUtils, born on March 14, 2026 when it was first uploaded to GitHub. The actual first version date was June 19, 2025.",
+        ],
+      },
+    },
+  ];
+
   const rotator = document.querySelector(".headline-rotator");
   const sections = Array.from(document.querySelectorAll(".snap-section"));
   const downloadCount = document.querySelector("#download-count");
@@ -274,6 +603,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const developerCards = Array.from(document.querySelectorAll("[data-developer-card]"));
   const developerPrev = document.querySelector(".developer-arrow-prev");
   const developerNext = document.querySelector(".developer-arrow-next");
+  const changelogPanel = document.querySelector(".changelog-panel");
+  const changelogTree = document.querySelector("#changelog-tree");
 
   let currentLanguage = "en";
 
@@ -284,6 +615,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let reviewAnimating = false;
   let reviewTimer = null;
   let developerIndex = 0;
+  let activeChangelogVersion = null;
+  let hoveredChangelogVersion = null;
+  let changelogFollowFrame = null;
 
   const translate = (key) => translations[currentLanguage][key] || key;
 
@@ -312,6 +646,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     setActiveSection(closestIndex);
+
+    const activeSection = sections[closestIndex];
+    if (
+      activeChangelogVersion !== null &&
+      activeSection &&
+      !activeSection.querySelector("#changelog-tree")
+    ) {
+      setActiveChangelogVersion(null);
+    }
   };
 
   const measureWordWidth = (word) => {
@@ -469,6 +812,185 @@ document.addEventListener("DOMContentLoaded", () => {
     syncDeveloperCards();
   };
 
+  const syncChangelogLines = () => {
+    if (!changelogPanel || !changelogTree) {
+      return;
+    }
+
+    let svg = changelogPanel.querySelector(".changelog-lines");
+    if (!svg) {
+      svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.classList.add("changelog-lines");
+      svg.setAttribute("aria-hidden", "true");
+      changelogPanel.prepend(svg);
+    }
+
+    svg.textContent = "";
+    const panelRect = changelogPanel.getBoundingClientRect();
+    const items = Array.from(changelogTree.querySelectorAll(".changelog-item"));
+    items.forEach((item, index) => {
+      const nextItem = items[index + 1];
+      if (!nextItem) {
+        return;
+      }
+
+      const node = item.querySelector(".changelog-node");
+      const nextNode = nextItem.querySelector(".changelog-node");
+      if (!node || !nextNode) {
+        return;
+      }
+
+      const nodeRect = node.getBoundingClientRect();
+      const nextNodeRect = nextNode.getBoundingClientRect();
+      const x1 = nodeRect.left + nodeRect.width * 0.5 - panelRect.left;
+      const y1 = nodeRect.top + nodeRect.height * 0.5 - panelRect.top;
+      const x2 = nextNodeRect.left + nextNodeRect.width * 0.5 - panelRect.left;
+      const y2 = nextNodeRect.top + nextNodeRect.height * 0.5 - panelRect.top;
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      const isBetaPair =
+        item.classList.contains("changelog-item-beta") &&
+        nextItem.classList.contains("changelog-item-beta");
+      const isAlphaPair =
+        item.classList.contains("changelog-item-alpha") &&
+        nextItem.classList.contains("changelog-item-alpha");
+      const isReleasePair =
+        item.classList.contains("changelog-item-release") &&
+        nextItem.classList.contains("changelog-item-release");
+
+      line.setAttribute("x1", String(x1));
+      line.setAttribute("y1", String(y1));
+      line.setAttribute("x2", String(x2));
+      line.setAttribute("y2", String(y2));
+      line.setAttribute(
+        "stroke",
+        isAlphaPair ? "#e85b5b" : isBetaPair ? "#d79246" : isReleasePair ? "#30d77a" : "#a9a05a",
+      );
+      line.setAttribute("stroke-width", "1.4");
+      line.setAttribute("stroke-linecap", "round");
+      line.setAttribute("opacity", "0.78");
+      svg.appendChild(line);
+    });
+  };
+
+  const queueChangelogLineSync = () => {
+    window.requestAnimationFrame(() => {
+      syncChangelogLines();
+      window.setTimeout(syncChangelogLines, 90);
+      window.setTimeout(syncChangelogLines, 220);
+      window.setTimeout(syncChangelogLines, 380);
+    });
+  };
+
+  const followChangelogLines = (duration = 220) => {
+    const startedAt = performance.now();
+
+    if (changelogFollowFrame !== null) {
+      window.cancelAnimationFrame(changelogFollowFrame);
+    }
+
+    const tick = (now) => {
+      syncChangelogLines();
+      if (now - startedAt < duration) {
+        changelogFollowFrame = window.requestAnimationFrame(tick);
+      } else {
+        changelogFollowFrame = null;
+        syncChangelogLines();
+      }
+    };
+
+    changelogFollowFrame = window.requestAnimationFrame(tick);
+  };
+
+  const setActiveChangelogVersion = (version) => {
+    activeChangelogVersion = version;
+
+    if (!changelogTree) {
+      return;
+    }
+
+    changelogTree.querySelectorAll(".changelog-item").forEach((item) => {
+      const isExpanded = item.dataset.version === activeChangelogVersion;
+      item.classList.toggle("is-expanded", isExpanded);
+      const button = item.querySelector(".changelog-version");
+      if (button) {
+        button.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+    });
+
+    followChangelogLines(420);
+  };
+
+  const renderChangelog = () => {
+    if (!changelogTree) {
+      return;
+    }
+
+    changelogTree.textContent = "";
+
+    changelogEntries.forEach((entry) => {
+      const item = document.createElement("li");
+      item.className = `changelog-item changelog-item-${entry.type}`;
+      item.dataset.version = entry.version;
+
+      if (activeChangelogVersion === entry.version) {
+        item.classList.add("is-expanded");
+      }
+      if (hoveredChangelogVersion === entry.version) {
+        item.classList.add("is-hovered");
+      }
+
+      const node = document.createElement("span");
+      node.className = "changelog-node";
+      node.setAttribute("aria-hidden", "true");
+
+      const button = document.createElement("button");
+      button.className = "changelog-version";
+      button.type = "button";
+      button.textContent = entry.version;
+      button.setAttribute("aria-expanded", activeChangelogVersion === entry.version ? "true" : "false");
+
+      const details = document.createElement("div");
+      details.className = "changelog-detail";
+
+      const logs = entry.logs ? entry.logs[currentLanguage] : [];
+      if (logs.length > 0) {
+        const list = document.createElement("ul");
+        logs.forEach((log) => {
+          const logItem = document.createElement("li");
+          logItem.textContent = log;
+          list.appendChild(logItem);
+        });
+        details.appendChild(list);
+      }
+
+      button.addEventListener("click", () => {
+        setActiveChangelogVersion(activeChangelogVersion === entry.version ? null : entry.version);
+      });
+
+      item.addEventListener("mouseenter", () => {
+        hoveredChangelogVersion = entry.version;
+        item.classList.add("is-hovered");
+        followChangelogLines();
+      });
+
+      item.addEventListener("mouseleave", () => {
+        if (hoveredChangelogVersion === entry.version) {
+          hoveredChangelogVersion = null;
+        }
+        item.classList.remove("is-hovered");
+        followChangelogLines();
+      });
+
+      item.append(node, button, details);
+      changelogTree.appendChild(item);
+    });
+
+    queueChangelogLineSync();
+    if (activeChangelogVersion !== null) {
+      followChangelogLines(420);
+    }
+  };
+
   const applyLanguage = (language) => {
     currentLanguage = language;
     document.documentElement.lang = currentLanguage === "zh" ? "zh-CN" : "en";
@@ -498,6 +1020,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resetRotator();
     syncDeveloperCards();
+    renderChangelog();
     resetReview();
   };
 
@@ -671,6 +1194,7 @@ document.addEventListener("DOMContentLoaded", () => {
       syncRotatorWidth(words[wordIndex]);
     }
     syncActiveSectionFromScroll();
+    syncChangelogLines();
   });
 
   window.addEventListener("scroll", syncActiveSectionFromScroll, { passive: true });

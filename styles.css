@@ -356,6 +356,281 @@ a {
   padding: 132px 72px 72px;
 }
 
+.changelog-showcase {
+  display: grid;
+  align-content: center;
+  gap: 38px;
+  min-height: 100vh;
+  padding: 132px 72px 72px;
+}
+
+.changelog-panel {
+  position: relative;
+  width: min(100%, 840px);
+  margin: 0 auto;
+  padding: 34px 34px 34px 42px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(91, 119, 255, 0.16), transparent 28%),
+    radial-gradient(circle at 86% 70%, rgba(66, 198, 255, 0.1), transparent 30%),
+    linear-gradient(180deg, rgba(8, 14, 20, 0.82), rgba(4, 8, 12, 0.7));
+  box-shadow:
+    0 28px 88px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  backdrop-filter: blur(20px) saturate(1.08);
+}
+
+.changelog-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.changelog-tree {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0 0 0 48px;
+  list-style: none;
+  --timeline-x: -30px;
+  --timeline-pull: 18px;
+  --timeline-expanded-pull: 6px;
+}
+
+.changelog-item::before {
+  content: none;
+  position: absolute;
+  top: 50%;
+  left: var(--timeline-x);
+  width: 1px;
+  height: var(--line-height, 42px);
+  background: linear-gradient(180deg, rgba(48, 215, 122, 0.82), rgba(48, 215, 122, 0.42));
+  transform-origin: top center;
+  transition:
+    left 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 180ms ease;
+}
+
+.changelog-item:last-child::before {
+  display: none;
+}
+
+.changelog-item {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: 42px;
+  padding: 6px 14px 6px 24px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.88);
+  transition:
+    background 220ms ease,
+    color 180ms ease,
+    padding 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.changelog-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.changelog-node {
+  position: absolute;
+  left: calc(var(--timeline-x) - 7px);
+  top: 50%;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transition: transform 120ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 120ms ease;
+  transform: translateY(-50%);
+}
+
+.changelog-node::after {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.45);
+  pointer-events: none;
+}
+
+.changelog-item-release .changelog-node {
+  left: calc(var(--timeline-x) - 9px);
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(48, 215, 122, 0.9);
+  background: rgba(8, 14, 20, 0.92);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.22) inset,
+    0 0 18px rgba(48, 215, 122, 0.42);
+}
+
+.changelog-item-beta .changelog-node {
+  background: #d79246;
+  box-shadow: 0 0 16px rgba(215, 146, 70, 0.42);
+}
+
+.changelog-item-alpha .changelog-node {
+  background: #e85b5b;
+  box-shadow: 0 0 16px rgba(232, 91, 91, 0.42);
+}
+
+.changelog-item-release.is-expanded .changelog-node {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.22) inset,
+    0 0 22px rgba(48, 215, 122, 0.78),
+    0 0 54px rgba(48, 215, 122, 0.46),
+    0 0 86px rgba(48, 215, 122, 0.18);
+}
+
+.changelog-item-beta.is-expanded .changelog-node {
+  box-shadow:
+    0 0 22px rgba(215, 146, 70, 0.84),
+    0 0 54px rgba(215, 146, 70, 0.5),
+    0 0 86px rgba(215, 146, 70, 0.2);
+}
+
+.changelog-item-alpha.is-expanded .changelog-node {
+  box-shadow:
+    0 0 22px rgba(232, 91, 91, 0.84),
+    0 0 54px rgba(232, 91, 91, 0.5),
+    0 0 86px rgba(232, 91, 91, 0.2);
+}
+
+.changelog-item-release.is-expanded .changelog-node::after {
+  border: 2px solid rgba(48, 215, 122, 0.78);
+  box-shadow: 0 0 26px rgba(48, 215, 122, 0.28);
+  animation: changelog-node-ripple 1.9s ease-out infinite;
+}
+
+.changelog-item-beta.is-expanded .changelog-node::after {
+  border: 2px solid rgba(215, 146, 70, 0.84);
+  box-shadow: 0 0 26px rgba(215, 146, 70, 0.32);
+  animation: changelog-node-ripple 1.9s ease-out infinite;
+}
+
+.changelog-item-alpha.is-expanded .changelog-node::after {
+  border: 2px solid rgba(232, 91, 91, 0.84);
+  box-shadow: 0 0 26px rgba(232, 91, 91, 0.32);
+  animation: changelog-node-ripple 1.9s ease-out infinite;
+}
+
+.changelog-item.is-hovered .changelog-node {
+  transform: translate(var(--timeline-pull), -50%);
+}
+
+.changelog-item.is-expanded.is-hovered .changelog-node {
+  transform: translate(var(--timeline-expanded-pull), -50%);
+}
+
+.changelog-item-release:has(+ .changelog-item-release)::before {
+  background: rgba(48, 215, 122, 0.68);
+}
+
+.changelog-item-beta:has(+ .changelog-item-beta)::before {
+  background: rgba(215, 146, 70, 0.68);
+}
+
+.changelog-item-release:has(+ .changelog-item-beta)::before {
+  background: linear-gradient(180deg, rgba(48, 215, 122, 0.72), rgba(215, 146, 70, 0.58));
+}
+
+.changelog-item-beta:has(+ .changelog-item-release)::before {
+  background: linear-gradient(180deg, rgba(215, 146, 70, 0.72), rgba(48, 215, 122, 0.58));
+}
+
+.changelog-version {
+  margin: 0;
+  overflow: hidden;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  background: transparent;
+  font: inherit;
+  font-size: clamp(1rem, 1.3vw, 1.18rem);
+  line-height: 1.55;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: transform 180ms ease;
+}
+
+.changelog-item:hover .changelog-version {
+  transform: translateX(3px);
+}
+
+.changelog-detail {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    max-height 360ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 220ms ease,
+    transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.changelog-item.is-expanded {
+  align-items: start;
+  padding-top: 12px;
+  padding-bottom: 14px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+}
+
+.changelog-item.is-expanded::before {
+  height: var(--line-height, 42px);
+}
+
+.changelog-item.is-expanded .changelog-detail {
+  max-height: 620px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.changelog-detail ul {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0 0 0 18px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.changelog-detail li {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@keyframes changelog-node-ripple {
+  0% {
+    opacity: 0.86;
+    transform: scale(0.28);
+  }
+
+  72% {
+    opacity: 0;
+    transform: scale(2.15);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2.15);
+  }
+}
+
 .developer-showcase {
   display: grid;
   align-content: start;
@@ -1185,6 +1460,33 @@ a {
   .review-showcase {
     gap: 24px;
     padding: 120px 20px 48px;
+  }
+
+  .changelog-showcase {
+    gap: 24px;
+    padding: 120px 20px 48px;
+  }
+
+  .changelog-panel {
+    padding: 24px 18px 24px 22px;
+    border-radius: 22px;
+  }
+
+  .changelog-tree {
+    gap: 4px;
+    padding-left: 38px;
+    --timeline-x: -25px;
+    --timeline-pull: 14px;
+    --timeline-expanded-pull: 4px;
+  }
+
+  .changelog-item {
+    min-height: 34px;
+    padding: 6px 10px 6px 18px;
+  }
+
+  .changelog-item::before {
+    height: var(--line-height, 38px);
   }
 
   .developer-showcase {
