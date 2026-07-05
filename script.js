@@ -619,7 +619,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let hoveredChangelogVersion = null;
   let changelogFollowFrame = null;
 
-  const translate = (key) => translations[currentLanguage][key] || key;
+  const translate = (key, fallback = key) => {
+    return translations[currentLanguage][key] || fallback;
+  };
 
   const setActiveSection = (index) => {
     sections.forEach((section, sectionIndex) => {
@@ -996,7 +998,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.lang = currentLanguage === "zh" ? "zh-CN" : "en";
 
     document.querySelectorAll("[data-i18n]").forEach((element) => {
-      element.textContent = translate(element.dataset.i18n);
+      element.textContent = translate(element.dataset.i18n, element.textContent);
     });
 
     if (languageToggle) {
