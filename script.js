@@ -50,6 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "stats.online": "Online Users",
       "stats.loading": "Loading",
       "stats.unavailable": "Unavailable",
+      "developers.title": "Core Developers",
+      "developers.subtitle":
+        "PVPUtils would not have come this far without these passionate developers.",
+      "developers.profile": "Profile",
+      "developers.link": "Personal Link",
       "reviews.title": "User Reviews",
       "reviews.subtitle": "A collection of honest comments from users.",
       "reviews.hint": "Click the review to browse more comments.",
@@ -108,6 +113,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "stats.online": "在线人数",
       "stats.loading": "加载中",
       "stats.unavailable": "暂不可用",
+      "developers.title": "核心开发者",
+      "developers.subtitle": "PVPUtils能走到现在，都离不开这些用爱发电的开发者们。",
+      "developers.profile": "个人简介",
+      "developers.link": "个人链接",
       "reviews.title": "用户评价",
       "reviews.subtitle": "里面收集了一些来自用户中肯的评价。",
       "reviews.hint": "点击评论可浏览更多内容",
@@ -159,6 +168,101 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   };
 
+  const developerSets = {
+    en: [
+      {
+        avatar: "./resource/baka_baicai.jpg",
+        avatarType: "image",
+        name: "baka_baicai",
+        role: "Chief Developer / Project Owner",
+        bio: "Chief developer responsible for most daily code maintenance and new feature development. More than 80% of the project code was written by them. They proposed and built the PVPUtils project, with extensive development experience across Java, Python, and C#. Most of the project's hardest technical issues are fixed by them. Because of their strong coding ability, they do not recommend writing the entire project with AI, but prefer to craft it directly themselves.",
+        links: [
+          { label: "GitHub", url: "https://github.com/bakabaicai" },
+          { label: "Bilibili", url: "https://space.bilibili.com/3546915648047958" },
+          { label: "Modrinth", url: "https://modrinth.com/user/baka_baicai" },
+          { label: "CurseForge", url: "https://www.curseforge.com/members/baka_baicai/projects" },
+        ],
+      },
+      {
+        avatar: "./resource/yajiyi.jpg",
+        avatarType: "image",
+        name: "yajiyi",
+        role: "Deputy Developer",
+        bio: "Originally a GitHub contributor, yajiyi was brought into the PVPUtils project by the chief developer for excellent coding ability. As deputy developer, their role is to flexibly use AI tools and personal engineering skills to assist the chief developer when the workload becomes too heavy or when work touches areas outside the chief developer's specialization. This greatly reduces development pressure and significantly improves development speed.",
+        links: [
+          { label: "GitHub", url: "https://github.com/yajiyi" },
+          { label: "Modrinth", url: "https://modrinth.com/user/yajiyi114514" },
+          { label: "Bilibili", url: "https://space.bilibili.com/588813582" },
+        ],
+      },
+      {
+        avatar: "./resource/ThinkReally114.jpg",
+        avatarType: "image",
+        name: "ThinkReally114",
+        role: "Platform Architect",
+        bio: "Originally also a GitHub contributor to PVPUtils, ThinkReally114 proactively developed PVPUtils-fix, solving the limitation that PVPUtils only supported Windows 10 x64. They expanded compatibility to Android (arm64), macOS (x64, arm64), Linux (x64, arm64), and Windows (arm64). They also provide domain and CDN services for the PVPUtils website.",
+        links: [
+          { label: "GitHub", url: "https://github.com/ThinkReally114" },
+          { label: "PVPUtils-Fix", url: "https://github.com/ThinkReally114/pvputils-fix" },
+        ],
+      },
+      {
+        avatar: "✦",
+        name: "AI Tools Used in Development",
+        role: "AI Agent",
+        bio: "The following records all AI tools used in this project. They are mainly used by the deputy developer: Claude Fable 5, Claude Opus 4.8, Deepseek-v4-pro, GPT-5.5.",
+        hideProfileLabel: true,
+        links: [],
+      },
+    ],
+    zh: [
+      {
+        avatar: "./resource/baka_baicai.jpg",
+        avatarType: "image",
+        name: "baka_baicai",
+        role: "首席开发者 / 项目所有人",
+        bio: "首席开发者，负责大部分代码的日常维护和新功能编写，项目里超过80%的代码由其进行编写，PVPUtils项目构想的提出者和构建者，拥有十分丰富的代码开发经验，技术范围覆盖Java、Python和C#，项目中大部分极难修复的技术性问题都由其进行修复，由于其优秀的代码编写水平，他并不推荐整个项目都由AI进行编写，而是由自己进行操刀。",
+        links: [
+          { label: "GitHub", url: "https://github.com/bakabaicai" },
+          { label: "Bilibili", url: "https://space.bilibili.com/3546915648047958" },
+          { label: "Modrinth", url: "https://modrinth.com/user/baka_baicai" },
+          { label: "CurseForge", url: "https://www.curseforge.com/members/baka_baicai/projects" },
+        ],
+      },
+      {
+        avatar: "./resource/yajiyi.jpg",
+        avatarType: "image",
+        name: "yajiyi",
+        role: "副开发者",
+        bio: "原先是一名Github贡献者，由于其优秀的代码开发水平，被首席开发者看重并吸纳进PVPUtils项目，作为副开发，他的职责是在首席开发过于劳累或涉及其专业盲区时，灵活的使用ai工具和自身能力辅助首席开发进行编写代码，这极大地分担了项目的开发压力，并显著提升了开发速度。",
+        links: [
+          { label: "GitHub", url: "https://github.com/yajiyi" },
+          { label: "Modrinth", url: "https://modrinth.com/user/yajiyi114514" },
+          { label: "Bilibili", url: "https://space.bilibili.com/588813582" },
+        ],
+      },
+      {
+        avatar: "./resource/ThinkReally114.jpg",
+        avatarType: "image",
+        name: "ThinkReally114",
+        role: "平台架构师",
+        bio: "最初也是一名为PVPUtils做出贡献的Github贡献者，他主动为PVPUtils开发了PVPUtils-fix，解决了PVPUtils只兼容Windows 10 x64的局限性，他为PVPUtils扩展了Android (arm64)、macOS (x64, arm64)、Linux (x64, arm64)以及Windows (arm64)的兼容，同时，也为PVPUtils的网站提供了域名与CDN服务。",
+        links: [
+          { label: "GitHub", url: "https://github.com/ThinkReally114" },
+          { label: "PVPUtils-Fix", url: "https://github.com/ThinkReally114/pvputils-fix" },
+        ],
+      },
+      {
+        avatar: "✦",
+        name: "开发项目所用到的AI工具",
+        role: "AI Agent",
+        bio: "下面收录了本项目所使用的所有AI工具，他们主要由副开发进行使用：Claude Fable 5、Claude Opus 4.8、Deepseek-v4-pro、GPT-5.5",
+        hideProfileLabel: true,
+        links: [],
+      },
+    ],
+  };
+
   const rotator = document.querySelector(".headline-rotator");
   const sections = Array.from(document.querySelectorAll(".snap-section"));
   const downloadCount = document.querySelector("#download-count");
@@ -166,6 +270,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const reviewPanel = document.querySelector("#review-panel");
   const reviewText = document.querySelector("#review-text");
   const languageToggle = document.querySelector("#language-toggle");
+  const developerTrack = document.querySelector("#developer-track");
+  const developerCards = Array.from(document.querySelectorAll("[data-developer-card]"));
+  const developerPrev = document.querySelector(".developer-arrow-prev");
+  const developerNext = document.querySelector(".developer-arrow-next");
 
   let currentLanguage = "en";
 
@@ -175,6 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let reviewIndex = 0;
   let reviewAnimating = false;
   let reviewTimer = null;
+  let developerIndex = 0;
 
   const translate = (key) => translations[currentLanguage][key] || key;
 
@@ -278,6 +387,88 @@ document.addEventListener("DOMContentLoaded", () => {
     return new Intl.NumberFormat(locale).format(value);
   };
 
+  const syncDeveloperCards = () => {
+    if (developerCards.length === 0) {
+      return;
+    }
+
+    const developers = developerSets[currentLanguage];
+    const previousIndex =
+      developerIndex === 0 && developers.length > 3
+        ? developers.length - 2
+        : (developerIndex - 1 + developers.length) % developers.length;
+    const nextIndex = (developerIndex + 1) % developers.length;
+
+    developerCards.forEach((card, cardPosition) => {
+      const developer = developers[cardPosition];
+      const avatar = card.querySelector(".developer-avatar");
+      const name = card.querySelector("[data-developer-name]");
+      const role = card.querySelector("[data-developer-role]");
+      const label = card.querySelector(".developer-detail-label");
+      const bio = card.querySelector("[data-developer-bio]");
+      const links = card.querySelector("[data-developer-links]");
+      const isActive = cardPosition === developerIndex;
+      const isRight = cardPosition === nextIndex;
+      const isLeft = cardPosition === previousIndex;
+
+      card.dataset.developerIndex = String(cardPosition);
+      card.classList.toggle("is-active", isActive);
+      card.classList.toggle("is-left", isLeft);
+      card.classList.toggle("is-right", isRight);
+      card.setAttribute("aria-current", isActive ? "true" : "false");
+
+      if (avatar) {
+        avatar.textContent = "";
+        avatar.classList.toggle("has-image", developer.avatarType === "image");
+        if (developer.avatarType === "image") {
+          const image = document.createElement("img");
+          image.src = developer.avatar;
+          image.alt = developer.name;
+          avatar.appendChild(image);
+        } else {
+          avatar.textContent = developer.avatar;
+        }
+      }
+      if (name) {
+        name.textContent = developer.name;
+      }
+      if (role) {
+        role.textContent = developer.role;
+      }
+      if (label) {
+        label.hidden = Boolean(developer.hideProfileLabel);
+      }
+      if (bio) {
+        bio.textContent = developer.bio;
+      }
+      if (links) {
+        links.textContent = "";
+        links.hidden = developer.links.length === 0;
+        developer.links.forEach((developerLink) => {
+          const link = document.createElement("a");
+          link.className = "developer-link";
+          link.href = developerLink.url;
+          link.target = "_blank";
+          link.rel = "noreferrer";
+          link.textContent = developerLink.label;
+          links.appendChild(link);
+        });
+      }
+    });
+  };
+
+  const setDeveloperIndex = (nextIndex) => {
+    const developers = developerSets[currentLanguage];
+    const normalizedIndex = (nextIndex + developers.length) % developers.length;
+
+    if (normalizedIndex === developerIndex) {
+      return;
+    }
+
+    developerIndex = normalizedIndex;
+    syncDeveloperCards();
+  };
+
   const applyLanguage = (language) => {
     currentLanguage = language;
     document.documentElement.lang = currentLanguage === "zh" ? "zh-CN" : "en";
@@ -306,6 +497,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     resetRotator();
+    syncDeveloperCards();
     resetReview();
   };
 
@@ -490,6 +682,35 @@ document.addEventListener("DOMContentLoaded", () => {
       applyLanguage(currentLanguage === "zh" ? "en" : "zh");
     });
   }
+
+  if (developerPrev) {
+    developerPrev.addEventListener("click", () => {
+      setDeveloperIndex(developerIndex - 1);
+    });
+  }
+
+  if (developerNext) {
+    developerNext.addEventListener("click", () => {
+      setDeveloperIndex(developerIndex + 1);
+    });
+  }
+
+  developerCards.forEach((card) => {
+    const activateCard = () => {
+      const nextIndex = Number(card.dataset.developerIndex);
+      if (Number.isFinite(nextIndex) && nextIndex !== developerIndex) {
+        setDeveloperIndex(nextIndex);
+      }
+    };
+
+    card.addEventListener("click", activateCard);
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        activateCard();
+      }
+    });
+  });
 
   if (reviewPanel && reviewText) {
     reviewPanel.addEventListener("click", showNextReview);
