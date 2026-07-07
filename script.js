@@ -267,6 +267,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const changelogEntries = [
     {
+      version: "V1.5-beta.2",
+      type: "beta",
+      logs: {
+        zh: [
+          "从此版本开始，许可证从GPL V3更换至PVPUtils Source-Available Non-Commercial License v1.0许可证。此前的版本将继续使用GPL V3许可证。从该版本以后，请在使用、修改或二次分发 PVPUtils 前先阅读并遵守新的许可证。",
+          "从该版本开始，PVPUtils将逐步删除其内置的“反作弊”相关代码。Minecraft是一款开放包容的游戏，外挂也属于这个游戏的一种特色。这意味着你可以自行将PVPUtils与其他外挂客户端一同使用而不会受到内置“反作弊”的影响，但是PVPUtils并不提倡这样做，同时也永远不会受理因和外挂客户端一同使用造成的兼容性问题，PVPUtils永远不会尝试兼容任何外挂客户端。",
+          "添加物品使用状态显示，包括但不限于弓还有多久拉满，食物还有多久吃完等有使用进度的物品的进度显示，包含Lite和New两种风格",
+          "改进挖掘状态显示，现在会提示你当前手持的工具能否正常挖掘并掉落当前方块",
+          "优化自动更新的稳定性",
+          "灵动岛接入HUDEdit，支持调节位置和大小",
+          "添加Freelook，默认按键为鼠标侧键2，可在MC按键设置中更改",
+          "添加彩虹附魔光效",
+          "灵动岛新增方块数量显示，这与原先的方块数量显示冲突，二者不能同时开启",
+          "优化官网布局，修复部分浏览器解析失败的bug",
+          "官网新增更新日志板块",
+        ],
+        en: [
+          "Starting from this version, the license changes from GPL V3 to PVPUtils Source-Available Non-Commercial License v1.0. Previous versions will continue to use GPL V3. From this version onward, please read and comply with the new license before using, modifying, or redistributing PVPUtils.",
+          "Starting from this version, PVPUtils will gradually remove its built-in anti-cheat related code. Minecraft is an open and inclusive game, and cheat clients are also one of its characteristics. This means you may use PVPUtils together with other cheat clients without being affected by the built-in anti-cheat. However, PVPUtils does not encourage this, will never handle compatibility issues caused by using cheat clients together with PVPUtils, and will never attempt to support any cheat client.",
+          "Added item usage status display, including but not limited to progress display for bows, food, and other items with usage progress. Includes both Lite and New styles.",
+          "Improved digging status display. It now tells whether the currently held tool can properly mine and drop the targeted block.",
+          "Improved automatic update stability.",
+          "Integrated Dynamic Island into HUDEdit, supporting position and size adjustment.",
+          "Added Freelook. The default key is mouse side button 2 and can be changed in Minecraft key settings.",
+          "Added rainbow enchantment glint effect.",
+          "Added block count display to Dynamic Island. It conflicts with the original block count display, so both cannot be enabled at the same time.",
+          "Optimized official website layout and fixed bugs where some browsers failed to parse it.",
+          "Added the update log section to the official website.",
+        ],
+      },
+    },
+    {
       version: "V1.5-beta.1",
       type: "beta",
       logs: {
