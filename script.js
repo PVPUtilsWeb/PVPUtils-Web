@@ -638,7 +638,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const changelogPanel = document.querySelector(".changelog-panel");
   const changelogTree = document.querySelector("#changelog-tree");
 
-  let currentLanguage = "en";
+  const getInitialLanguage = () => {
+    const savedLanguage = window.localStorage.getItem("pvputils-language");
+    if (savedLanguage === "zh" || savedLanguage === "en") {
+      return savedLanguage;
+    }
+
+    const browserLanguages = Array.isArray(navigator.languages) && navigator.languages.length > 0
+      ? navigator.languages
+      : [navigator.language || ""];
+
+    return browserLanguages.some((language) => {
+      return language.toLowerCase().startsWith("zh");
+    })
+      ? "zh"
+      : "en";
+  };
+
+  let currentLanguage = getInitialLanguage();
 
   let words = wordSets[currentLanguage];
   let wordIndex = 0;
@@ -1237,7 +1254,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (languageToggle) {
     languageToggle.addEventListener("click", () => {
-      applyLanguage(currentLanguage === "zh" ? "en" : "zh");
+      const nextLanguage = currentLanguage === "zh" ? "en" : "zh";
+      window.localStorage.setItem("pvputils-language", nextLanguage);
+      applyLanguage(nextLanguage);
     });
   }
 
