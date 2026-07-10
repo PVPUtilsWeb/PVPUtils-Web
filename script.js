@@ -267,6 +267,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const changelogEntries = [
     {
+      version: "V1.5",
+      type: "release",
+      logs: {
+        zh: [
+          "新增WebGUI，可在“其他”分页下找到，可代替ClickGui实现更高性能和更流畅的设置体验",
+          "加入去除容器半透明背景",
+          "内置修复多人游戏连接界面按钮和标题在特定分辨率下会重叠的问题",
+          "改进多人游戏连接界面，让他能够显示更多实用信息",
+          "优化HUD编辑器，让其对其算法更加人性化",
+          "加入功能列表显示",
+          "加入AutoGG，可使用指令更改文本内容",
+          "加入食物信息显示",
+          "加入隐藏boss血条",
+          "加入更好的计分板",
+          "优化并重新加入伤害数值显示",
+          "扩展灵动岛功能，现在方块数量显示、低血量提示、物品使用状态显示、以及命令反馈均可以在灵动岛显示",
+          "优化主手辅助发包顺序以免触发反作弊检测",
+          "主手辅助新增快速使用功能，适合PotPVP等需要快速点击左键使用物品的模式",
+          "完全移除内置反作弊的触发逻辑",
+        ],
+        en: [
+          "Added WebGUI, available under the Others tab. It can replace ClickGUI for higher performance and a smoother settings experience.",
+          "Added an option to remove the translucent container background.",
+          "Built in a fix for multiplayer connection screen buttons and titles overlapping at certain resolutions.",
+          "Improved the multiplayer connection screen so it can display more useful information.",
+          "Optimized the HUD editor with a more user-friendly alignment algorithm.",
+          "Added feature list display.",
+          "Added AutoGG, with command support for changing the text content.",
+          "Added food information display.",
+          "Added hidden boss bar support.",
+          "Added a better scoreboard.",
+          "Optimized and re-added damage number display.",
+          "Expanded Dynamic Island features. Block count display, low health warning, item usage status display, and command feedback can now be shown in Dynamic Island.",
+          "Optimized Main Hand Assist packet order to avoid triggering anti-cheat detection.",
+          "Added quick use to Main Hand Assist, suitable for modes like PotPVP that require quickly left-clicking to use items.",
+          "Completely removed the trigger logic of the built-in anti-cheat.",
+        ],
+      },
+    },
+    {
       version: "V1.5-beta.2",
       type: "beta",
       logs: {
