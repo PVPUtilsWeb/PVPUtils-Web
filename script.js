@@ -267,6 +267,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const changelogEntries = [
     {
+      version: "V1.6-beta.1",
+      type: "beta",
+      logs: {
+        zh: [
+          "从该版本开始，PVPUtils全面接入IRC系统，玩家可使用 .c/.chat 直接在游戏内和其他用户聊天，聊天数据均经过加密上传，不会被您所在的服务器所检测到。",
+          "启动客户端时会要求您进行用户注册，和注册有关的问题都可以咨询管理（不要去骚扰群主，他不会为你解决任何问题）。",
+          "您也可以选择“不使用IRC”选项来跳过注册直接进入游戏，但是这样会丧失诸多IRC功能，我们非常不推荐这样做。若无特殊变化，“不使用IRC”选项将在2026年8月1日之后关闭，此前的版本将不受影响，若有特殊变化，管理团队会第一时间通知。",
+          "从PVPUtils-v1.6-beta.1开始，群内所提供的IRC版本将受到PAHP©的保护，GitHub等平台将提供除IRC以外所有完整源代码，PVPUtils依然保持开源。",
+          "优化命令结构，所有客户端命令统一使用 . 作为前缀",
+          "加入IRC功能",
+          "优化WebHUD的视觉效果",
+        ],
+        en: [
+          "Starting from this version, PVPUtils is fully integrated with an IRC system. Players can use .c/.chat to talk directly with other users in-game. Chat data is uploaded in encrypted form and will not be detected by the server you are currently on.",
+          "When launching the client, you will be asked to register a user account. Any registration-related issues can be asked to the administrators. Do not bother the group owner, as they will not help you with this.",
+          "You may also choose the “Do not use IRC” option to skip registration and enter the game directly, but this will disable many IRC features, and we strongly do not recommend doing so. Unless there are special changes, the “Do not use IRC” option will be closed after August 1, 2026. Earlier versions will not be affected. If anything changes, the management team will notify users immediately.",
+          "Starting from PVPUtils-v1.6-beta.1, the IRC-enabled version distributed in the group will be protected by PAHP(c). Platforms such as GitHub will continue to provide all complete source code except the IRC part, and PVPUtils remains open source.",
+          "Optimized the command structure. All client commands now consistently use . as the prefix.",
+          "Added IRC functionality.",
+          "Improved the visual style of WebHUD.",
+        ],
+      },
+    },
+    {
       version: "V1.5",
       type: "release",
       logs: {
