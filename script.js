@@ -267,6 +267,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const changelogEntries = [
     {
+      version: "V1.6",
+      type: "release",
+      logs: {
+        zh: [
+          "新版本更新之后老版本的IRC选项将无法使用，届时请移步新版本或使用“不使用IRC”选项",
+          "新增内置网易云音乐播放器，默认按键为右Ctrl，可以在MC设置中更改按键绑定",
+          "可选择扫码登陆与账密登录，所有数据都不经过服务器，但是这并不意味者你可以免费听音乐，非VIP用户只能试听30秒，这为平台限制，无法绕过",
+          "仅测试在Windows 11 64位、界面尺寸2下运行，其他分辨率与系统暂不保证能正常运行",
+          "新增火焰弹轨迹预测",
+          "新增自定义方块轮廓",
+          "新增歌词显示",
+          "新增音乐信息显示，支持切换三种风格",
+        ],
+        en: [
+          "After updating to the new version, the IRC option in older versions will no longer be available. Please move to the new version or use the “Do not use IRC” option.",
+          "Added a built-in NetEase Cloud Music player. The default key is Right Ctrl and can be changed in Minecraft key settings.",
+          "Supports both QR-code login and account/password login. No user data passes through our server, but that does not mean you can listen to music for free. Non-VIP users can only preview tracks for 30 seconds. This is a platform limitation and cannot be bypassed.",
+          "This feature has only been tested on Windows 11 64-bit with GUI scale 2. Proper behavior on other resolutions or operating systems is not guaranteed for now.",
+          "Added fire charge trajectory prediction.",
+          "Added custom block outline rendering.",
+          "Added lyric display.",
+          "Added music information display with support for switching between three styles.",
+        ],
+      },
+    },
+    {
       version: "V1.6-beta.3",
       type: "beta",
       logs: {
