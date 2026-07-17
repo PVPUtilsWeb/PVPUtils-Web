@@ -267,6 +267,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const changelogEntries = [
     {
+      version: "V1.6-beta.3",
+      type: "beta",
+      logs: {
+        zh: [
+          "新版本更新之后老版本的IRC选项将无法使用，届时请移步新版本或使用“不使用IRC”选项",
+          "新增运动相机",
+          "新增火焰弹路径预测（爆炸范围可能不准确）",
+          "新增更好的延迟显示",
+          "新增禁止游泳",
+          "压缩内置视频大幅减小包体",
+          "修复了在切换页面时会导致GLSL被刷新回初始状态的问题",
+          "增加了一个创造物品栏（虽然没什么用）",
+          "增加公告页面（实验性，可直接关闭且不影响启动）",
+        ],
+        en: [
+          "After updating to the new version, the IRC option in older versions will no longer be available. Please move to the new version or use the “Do not use IRC” option.",
+          "Added motion camera.",
+          "Added fire charge trajectory prediction. The explosion range may be inaccurate.",
+          "Added a better ping display.",
+          "Added no swimming.",
+          "Compressed built-in videos to significantly reduce package size.",
+          "Fixed an issue where switching pages could reset GLSL back to its initial state.",
+          "Added a creative inventory tab, although it is not very useful.",
+          "Added an announcement page. It is experimental and can be closed directly without affecting startup.",
+        ],
+      },
+    },
+    {
+      version: "V1.6-beta.2",
+      type: "beta",
+      logs: {
+        zh: [
+          "新版本更新之后老版本的IRC选项将无法使用，届时请移步新版本或使用“不使用IRC”选项",
+          "修复IRC在部分情况下使用“不使用IRC”选项会提示版本过时的问题",
+          "“不使用IRC”选项过期时间延长至2026.09.12",
+          "新增IRC私聊指令，使用 .w 用户名 / .msg 用户名 均可触发，不经过您所游玩的服务器，私聊记录会被服务端加密，不可被任何人查看",
+          "目标HUD新增显示攻击距离选项",
+          "IRC支持@某人，需要对方在线且注册过IRC账户，被@的人会收到聊天框以及游戏内音效提示",
+          "优化IRC登录界面视觉效果",
+          "修复登陆后欢迎界面头衔与身份组更新不及时的问题",
+          "提升PAHP保护强度，有可能在部分设备上造成轻微性能影响",
+        ],
+        en: [
+          "After updating to the new version, the IRC option in older versions will no longer be available. Please move to the new version or use the “Do not use IRC” option.",
+          "Fixed an issue where using the “Do not use IRC” option could incorrectly report the IRC version as outdated in some cases.",
+          "Extended the expiration date of the “Do not use IRC” option to 2026.09.12.",
+          "Added IRC private message commands. Both .w username and .msg username can trigger it. Messages do not pass through the server you are playing on, and private chat records are encrypted server-side so they cannot be viewed by anyone else.",
+          "Added an option to display attack distance in TargetHUD.",
+          "IRC now supports @mentions. The mentioned user must be online and registered with an IRC account. Mentioned users will receive both a chat notification and an in-game sound effect.",
+          "Improved the visual design of the IRC login interface.",
+          "Fixed delayed title and group identity updates on the welcome screen after logging in.",
+          "Strengthened PAHP protection, which may cause a slight performance impact on some devices.",
+        ],
+      },
+    },
+    {
       version: "V1.6-beta.1",
       type: "beta",
       logs: {
