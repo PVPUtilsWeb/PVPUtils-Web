@@ -267,6 +267,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const changelogEntries = [
     {
+      version: "V1.7",
+      type: "release",
+      logs: {
+        zh: [
+          "大幅优化ClickGUI性能，现在不会有任何卡顿。",
+          "Blur算法优化已经开始，目前为第一阶段，帧数可提高20-30。",
+          "优化网易云音乐播放器稳定性。",
+          "修复网易云音乐播放器音量控制在切换到下一首歌曲时失效的问题。",
+          "新增自定义手部物品，可调节大小、位置、挥动速度以及透明度（不稳定）。",
+          "新增投掷物轨迹预测，支持弓箭轨迹和目标位置预测。",
+          "新增盔甲透明度调节。",
+          "包体积减小约一半。",
+          "适配最新版本的跨平台兼容修复补丁（PVPUtils-Fix）。",
+        ],
+        en: [
+          "Significantly optimized ClickGUI performance. It should now run without noticeable stuttering.",
+          "The Blur algorithm optimization has begun. In this first phase, frame rates can improve by 20–30 FPS.",
+          "Improved the stability of the NetEase Cloud Music player.",
+          "Fixed an issue where the NetEase Cloud Music player's volume control stopped working after switching to the next song.",
+          "Added customizable held items, with controls for size, position, swing speed, and opacity. This feature is currently unstable.",
+          "Added projectile trajectory prediction, including bow trajectory and target position prediction.",
+          "Added armor opacity adjustment.",
+          "Reduced the package size by approximately half.",
+          "Added compatibility with the latest version of the cross-platform compatibility patch, PVPUtils-Fix.",
+        ],
+      },
+    },
+    {
       version: "V1.6",
       type: "release",
       logs: {
